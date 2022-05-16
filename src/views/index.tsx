@@ -1,0 +1,22 @@
+export { HomeView } from "./home";
+export { TokenView } from "./token";
+export { NFTView } from "./nft";
+export { PrivacyPolicyView } from "./privacypolicy";
+export { PressRelaseView } from "./pressRelease";
+export { TermsAndConditionsView } from "./termsandconditions";
+export { ContactUsView } from "./contactus";
+export { NFTDetailsView } from "./nftdetails";
+export { MyBidView } from "./mybids";
+export { SearchView } from "./search";
+export { MintNewNFTView } from "./mintnewnft";
+export { MyWatchListView } from "./mywatchlist";
+export { ProfileView } from "./profile";
+export { ProjectDetailView } from "./projectdetail";
+export { ProjectListView } from "./projectlist";
+export { ProjectCardsView } from "./projectcards";
+export { LoginView } from "./login";
+export {AuctionsView } from "./auctions";
+export {AnnounceAuctionView} from "./announceauction";
+export {RegisterView} from './register';
+export {AdminNftListView} from './adminnftlist';
+export {ExploreView} from './explore'
