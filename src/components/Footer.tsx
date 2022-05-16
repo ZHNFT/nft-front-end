@@ -22,7 +22,7 @@ export const Footer: FC = () => {
                                 <li><a href="https://www.instagram.com/BluChip_NFT/" target="_blank"><img className="img-fluid" src="/instagram-line.png" alt="" /></a></li>
                                 <li><a href="https://www.linkedin.com/groups/14062137/" target="_blank"><img className="img-fluid" src="/linkedin.png" alt="" /></a></li>
                             </ul>
-                            <p>BluChip is a division of ArtCoins International</p>
+                            <p>BluChip is a division of ArtCoins International — Duns # 118677567</p>
 
                         </div>
                         <div className="col-md-4">

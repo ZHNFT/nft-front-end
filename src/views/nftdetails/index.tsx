@@ -85,10 +85,10 @@ export const NFTDetailsView: FC = ({ }) => {
             setWish(x.data)
             if (x.data) {
                 setWishCount(wishcount + 1)
-                notify({type: "success", message: "Added to your watch list"});
+                notify({ type: "success", message: "Added to your watch list" });
             } else if (wishcount > 0) {
                 setWishCount(wishcount - 1)
-                notify({type: "error", message: "Removed from watch list"});
+                notify({ type: "error", message: "Removed from watch list" });
             }
         });
         // setData(...data, )
@@ -103,40 +103,40 @@ export const NFTDetailsView: FC = ({ }) => {
             setWish(x.data?.isFavourite);
             setWishCount(x.data?.wishedCount)
             var endoftime = "";
-            if(x?.data?.statusId == 2) {
+            if (x?.data?.statusId == 2) {
                 endoftime = x?.data?.startdate
-            } else if(x?.data?.statusId == 3) {
+            } else if (x?.data?.statusId == 3) {
                 endoftime = x?.data?.enddate
             }
 
-        //     const target = new Date(endoftime)
-    
-        //   const interval = setInterval(() => {
-        //     const now = new Date()
-        //     const difference = target.getTime() - now.getTime()
-    
-        //     const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-        //   setDays(d);
-    
-        //   const h = Math.floor(
-        //     (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        //   );
-        //   setHours(h);
-    
-        //   const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        //   setMinutes(m);
-    
-        //   const s = Math.floor((difference % (1000 * 60)) / 1000);
-        //   setSeconds(s);
-        //   if(d <= 0 && h <= 0 && m <= 0 && s <= 0) {
-        //     setEndTime(true)
-        //   }
+            //     const target = new Date(endoftime)
+
+            //   const interval = setInterval(() => {
+            //     const now = new Date()
+            //     const difference = target.getTime() - now.getTime()
+
+            //     const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            //   setDays(d);
+
+            //   const h = Math.floor(
+            //     (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            //   );
+            //   setHours(h);
+
+            //   const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            //   setMinutes(m);
+
+            //   const s = Math.floor((difference % (1000 * 60)) / 1000);
+            //   setSeconds(s);
+            //   if(d <= 0 && h <= 0 && m <= 0 && s <= 0) {
+            //     setEndTime(true)
+            //   }
 
 
 
-        //   }, 1000)
-          
-        //   return () => clearInterval(interval);
+            //   }, 1000)
+
+            //   return () => clearInterval(interval);
         });
         if (data) {
             // console.log(data.isFavourite)
@@ -177,11 +177,11 @@ export const NFTDetailsView: FC = ({ }) => {
                             <h5>{data?.title}</h5>
                             <ul className="info">
                                 <li>
-                                    {user && user?.accessToken ? 
-                                    <a className="cursor-pointer" onClick={onWishClick}>
-                                        {wish ? <img src="/heart.png" alt="" /> : <img src="/heart-o.png" alt="" />}
-                                    </a>
-                                    : <img src="/heart-o.png" alt="" />} {wishcount} favorites
+                                    {user && user?.accessToken ?
+                                        <a className="cursor-pointer" onClick={onWishClick}>
+                                            {wish ? <img src="/heart.png" alt="" /> : <img src="/heart-o.png" alt="" />}
+                                        </a>
+                                        : <img src="/heart-o.png" alt="" />} {wishcount} favorites
                                 </li>
                             </ul>
                             <ul className="actions">
@@ -211,12 +211,12 @@ export const NFTDetailsView: FC = ({ }) => {
                                 </li>
                                 <li>
                                     <div className="sol">
-                                        <img src="/solana_color.png" alt="" /> 
+                                        <img src="/solana_color.png" alt="" />
                                         &nbsp;
-                                        {data?.currentBid && data?.currentBid > 0 ? 
-                                        <>{data?.currentBid} </> : 
-                                        <>{data?.auctionDetail?.initialBid ? data?.auctionDetail?.initialBid : <>TBA </>} </>}
-                                        SOL 
+                                        {data?.currentBid && data?.currentBid > 0 ?
+                                            <>{data?.currentBid} </> :
+                                            <>{data?.auctionDetail?.initialBid ? data?.auctionDetail?.initialBid : <>TBA </>} </>}
+                                        SOL
                                     </div>
                                 </li>
                             </ul>
@@ -226,12 +226,12 @@ export const NFTDetailsView: FC = ({ }) => {
                                     <b>Bid Amount</b> <span>{data?.winnerDetail?.bidAmount}</span>
                                 </div>
                             }
-                            {data?.statusId >= 4 && 
+                            {data?.statusId >= 4 &&
                                 <p className="small mb-4">
                                     <b>Auction Started:</b> {data?.startDate} | <b>Auction Ended:</b> {data?.endDate}
                                 </p>
                             }
-                            {data?.statusId <= 3 && data?.statusId > 1 ? 
+                            {data?.statusId <= 3 && data?.statusId > 1 ?
                                 <p className="small mb-4">
                                     <b>Auction Start:</b> {data?.startDate} | <b>Auction End:</b> {data?.endDate}
                                 </p> : null
@@ -249,20 +249,20 @@ export const NFTDetailsView: FC = ({ }) => {
                                         )}
                                 </> : null
                             } */}
-                            {data?.statusId === 1 && 
+                            {data?.statusId === 1 &&
                                 <p className="small mb-4">
                                     <b>Auction Start:</b> TBA | <b>Auction End:</b> TBA
                                 </p>
                             }
                             {data?.statusId === 1 ?
                                 <p className="small mb-4">
-                                    <b>Initial Bid:</b> <img src="/solana_color.png" alt="" /> TBA SOL |  <b>Minimum Bid:</b> <img src="/solana_color.png" alt="" /> TBA SOL
-                                </p> : 
+                                    <b>Initial Bid:</b> <img src="/solana_color.png" alt="" /> TBA SOL |  <b>Incremented Value:</b> <img src="/solana_color.png" alt="" /> TBA SOL
+                                </p> :
                                 <p className="small mb-4">
-                                    <b>Initial Bid:</b> <img src="/solana_color.png" alt="" /> {data?.auctionDetail?.initialBid} SOL |  <b>Minimum Bid:</b> <img src="/solana_color.png" alt="" /> {data?.auctionDetail?.minimumBid} SOL
+                                    <b>Initial Bid:</b> <img src="/solana_color.png" alt="" /> {data?.auctionDetail?.initialBid} SOL |  <b>Incremented Value:</b> <img src="/solana_color.png" alt="" /> {data?.auctionDetail?.minimumBid} SOL
                                 </p>
                             }
-                            
+
                             <h5>Description</h5>
                             <p>{data?.shortDescription}</p>
                         </div>

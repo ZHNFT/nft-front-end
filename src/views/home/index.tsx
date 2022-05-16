@@ -491,6 +491,16 @@ export const HomeView: FC = ({ }) => {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-md-6">
+
+                            <p>50% of the profits from this NFT sale will be donated to ARTification, a free art program for residents of Charles Hocking House and the surrounding area of Hockney.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="secure">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-md-6">
                             <h2>Your Security Is Our Priority</h2>
                             <p>NFTs opened the floodgates to create a scarcity of digital goods for the first time. However, that's not all that NFTs have done. Through the same blockchain technology that is used for cryptocurrency, NFTs come with a unique code that can't be copied or exchanged. Once you buy NFTs, you get the sole ownership of the original artwork created by artists and the option of swapping it with the physical BluChip artwork. With each transaction on an NFT, a new, unique code is generated, so there are no chances of two people ever owning or even knowing the same code.</p>
                             <p>We have emphasized that this security element of NFTs stays intact regardless of the number of transactions on a single piece of art. NFTs on BluChip are copyrighted by original artists, and the built-in authentication makes it difficult for third parties to breach our system.</p>

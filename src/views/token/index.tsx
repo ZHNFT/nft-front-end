@@ -19,12 +19,12 @@ export const TokenView: FC = ({ }) => {
 
   const user = userService.getUser()
 
-    useEffect(() => {
-        if(user && user?.roleTypeId === 1) {
-        } else {
-            router.push("/")
-        }
-    }, []);
+  useEffect(() => {
+    if (user && user?.roleTypeId === 1) {
+    } else {
+      router.push("/")
+    }
+  }, []);
 
   const today = new Date()
   const yesterday = new Date(today)
@@ -50,7 +50,7 @@ export const TokenView: FC = ({ }) => {
     // console.log(data)
     let startdate = moment(data.AuctionStartDate).format('YYYY-MM-DD, h:mm:ss a')
     let enddate = moment(data.AuctionEndDate).format('YYYY-MM-DD, h:mm:ss a')
-    
+
 
 
     let formData = new FormData();
@@ -96,35 +96,35 @@ export const TokenView: FC = ({ }) => {
             <div className="row bg-light">
               <div className="col-md-12 col-lg-12">
                 <h3>Auction Detail</h3>
-                  <div className="col-md-12">
-                        <label>Start Date Time</label>
-                        <Controller
-                          control={control}
-                          name="AuctionStartDate"
-                          render={({ field }) => (
-                            <Datetime 
-                              onChange={(date) => field.onChange(date)}
-                              // initialValue={new Date()}
-                            
-                            />
-                            // <DateTimePicker onChange={(date) => field.onChange(date)} />
-                          )}
-                        />
-                        <div className="invalid-feedback">{errors.AuctionStartDate?.message}</div>
-                    </div>
-                    <div className="col-md-12">
-                        <label>End Date Time</label>
-                        <Controller
-                          control={control}
-                          name="AuctionEndDate"
-                          render={({ field }) => (
-                            <Datetime 
-                              onChange={(date) => field.onChange(date)}
-                            />
-                          )}
-                        />
-                        <div className="invalid-feedback">{errors.AuctionEndDate?.message}</div>
-                    </div>
+                <div className="col-md-12">
+                  <label>Start Date Time</label>
+                  <Controller
+                    control={control}
+                    name="AuctionStartDate"
+                    render={({ field }) => (
+                      <Datetime
+                        onChange={(date) => field.onChange(date)}
+                      // initialValue={new Date()}
+
+                      />
+                      // <DateTimePicker onChange={(date) => field.onChange(date)} />
+                    )}
+                  />
+                  <div className="invalid-feedback">{errors.AuctionStartDate?.message}</div>
+                </div>
+                <div className="col-md-12">
+                  <label>End Date Time</label>
+                  <Controller
+                    control={control}
+                    name="AuctionEndDate"
+                    render={({ field }) => (
+                      <Datetime
+                        onChange={(date) => field.onChange(date)}
+                      />
+                    )}
+                  />
+                  <div className="invalid-feedback">{errors.AuctionEndDate?.message}</div>
+                </div>
                 {/* <div className="col-md-12 mb-4">
                   <label>Start date</label>
                   <input type="date" name="AuctionStartDate" 
@@ -140,15 +140,15 @@ export const TokenView: FC = ({ }) => {
                   <div className="invalid-feedback">{errors.AuctionEndDate?.message}</div>
                 </div> */}
                 <div className="col-md-12 mb-4">
-                  <label>Minimum Bid</label>
-                  <input type="text" name="MinimumBid" {...register('MinimumBid')} 
-                  className={`form-control mb-0 icon_left_sona ${errors.MinimumBid ? 'is-invalid' : ''}`} />
+                  <label>Incremented Value</label>
+                  <input type="text" name="MinimumBid" {...register('MinimumBid')}
+                    className={`form-control mb-0 icon_left_sona ${errors.MinimumBid ? 'is-invalid' : ''}`} />
                   <div className="invalid-feedback">{errors.MinimumBid?.message}</div>
                 </div>
                 <div className="col-md-12 mb-4">
                   <label>Initial Bid</label>
-                  <input type="text" name="InitialBid" {...register('InitialBid')} 
-                  className={`form-control mb-0 icon_left_sona ${errors.InitialBid ? 'is-invalid' : ''}`} />
+                  <input type="text" name="InitialBid" {...register('InitialBid')}
+                    className={`form-control mb-0 icon_left_sona ${errors.InitialBid ? 'is-invalid' : ''}`} />
                   <div className="invalid-feedback">{errors.InitialBid?.message}</div>
                 </div>
               </div>
