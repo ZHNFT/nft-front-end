@@ -1,7 +1,7 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import Link from 'next/link';
 import { FC } from 'react';
-import { NewsLetters } from './NewsLetters'
+import PdfViewer from '../components/Pdf-viewer'
 
 export const Footer: FC = () => {
     const { publicKey, sendTransaction } = useWallet();
@@ -25,6 +25,22 @@ export const Footer: FC = () => {
                             <p>BluChip is a division of ArtCoins International — Duns # 118677567</p>
 
                         </div>
+
+                        {/* <!-- Modal --> */}
+                        <div className="modal" id="pressRelease" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal-dialog modal-dialog-centered">
+                                <div className="modal-content" style={{ width: '200%' }}>
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="exampleModalLabel">Press Release</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        <PdfViewer />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="col-md-4">
                             <div className="footermenu">
                                 <div className="menu">
@@ -32,7 +48,7 @@ export const Footer: FC = () => {
                                     <ul>
                                         <li><Link href="/explore"><a>All NFTs</a></Link></li>
                                         <li><Link href="/explore"><a>New</a></Link></li>
-                                        <li><Link href="/pressrelease"><a>Press Release</a></Link></li>
+                                        <li><a data-bs-toggle="modal" data-bs-target="#pressRelease">Press Release</a></li>
                                     </ul>
                                 </div>
                                 <div className="menu">
@@ -66,7 +82,7 @@ export const Footer: FC = () => {
                             <p className="text-md-start text-center"> Copyright © {year} BluChip. All Rights Reserved. </p>
                         </div>
                         <div className="col-md-6 text-end">
-                            <p className="text-md-end text-center"><Link href="/termsandconditions"><a>Terms & Conditions</a></Link> | <Link href="/pressrelease"><a>Press Release</a></Link> | <Link href="/privacypolicy"><a>Privacy Policy</a></Link> | <Link href="/contactus"><a>Contact Us</a></Link></p>
+                            <p className="text-md-end text-center"><Link href="/termsandconditions"><a>Terms & Conditions</a></Link> | <a href="#" data-bs-toggle="modal" data-bs-target="#pressRelease">Press Release</a> | <Link href="/privacypolicy"><a>Privacy Policy</a></Link> | <Link href="/contactus"><a>Contact Us</a></Link></p>
                         </div>
                     </div>
                 </div>

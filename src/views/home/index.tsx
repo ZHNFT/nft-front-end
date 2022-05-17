@@ -199,6 +199,8 @@ export const HomeView: FC = ({ }) => {
                                         <div className="titlenstock">
                                             <h5><a >Stik Love</a></h5>
                                             <p>Auction Start:  TBA</p>
+                                            <p>50% of the profits from this NFT sale will be donated to ARTification, a free art program for residents of Charles Hocking House and the surrounding area of Hockney.</p>
+
                                         </div>
                                     </div>
                                     <div className="right">
@@ -487,16 +489,7 @@ export const HomeView: FC = ({ }) => {
             </div>
         </div>
     </section> */}
-            <section className="secure">
-                <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-md-6">
 
-                            <p>50% of the profits from this NFT sale will be donated to ARTification, a free art program for residents of Charles Hocking House and the surrounding area of Hockney.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section className="secure">
                 <div className="container">
                     <div className="row align-items-center">
@@ -534,7 +527,6 @@ export const HomeView: FC = ({ }) => {
                     </div>
                 </div>
             </section>
-
 
             {/* <!-- Modal --> */}
             <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">

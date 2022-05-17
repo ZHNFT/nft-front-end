@@ -1,3 +1,5 @@
+const { pdfjs } = require('react-pdf')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -9,4 +11,5 @@ module.exports = {
     BASE_URL: 'https://api.bluchipnft.co/'
   },
   nextConfig,
+  pdfjs
 }
