@@ -12,6 +12,7 @@ export const ContactUsView: FC = ({ }) => {
     subject: "",
     message: "",
   });
+  const [submitted, setSubmitted] = useState(false)
   const [validation, setValidation] = useState({
     name: "",
     email: "",
@@ -23,6 +24,9 @@ export const ContactUsView: FC = ({ }) => {
   //handle submit updates
   function handleChange(event) {
     const { name, value } = event.target;
+    if (submitted) {
+      setSubmitted(false)
+    }
     setInputValue({ ...inputValues, [name]: value });
   }
 
@@ -39,7 +43,7 @@ export const ContactUsView: FC = ({ }) => {
   const checkValidation = () => {
     let errors = validation;
     //first Name validation
-    if (!inputValues.name.trim()) {
+    if (!inputValues.name.trim() && !submitted) {
       errors.name = "Name is required";
     } else {
       errors.name = "";
@@ -48,24 +52,24 @@ export const ContactUsView: FC = ({ }) => {
     // email validation
     var validRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (!inputValues.email.trim()) {
+    if (!inputValues.email.trim() && !submitted) {
       errors.email = "Email is required";
-    } else if (!inputValues.email.match(validRegex)) {
+    } else if (!inputValues.email.match(validRegex) && !submitted) {
       errors.email = "Please enter a valid email address";
     } else {
       errors.email = "";
     }
 
     // Phone validation
-    var phoneno = /^[0-9\b]+$/;
-    if (!phoneno.test(inputValues.phone)) {
-      errors.phone = "Please enter a valid phone number";
-    } else {
-      errors.phone = "";
-    }
+    // var phoneno = /^[0-9\b]+$/;
+    // if (!phoneno.test(inputValues.phone)) {
+    //   errors.phone = "Please enter a valid phone number";
+    // } else {
+    //   errors.phone = "";
+    // }
 
     // Message validation
-    if (!inputValues.message.trim()) {
+    if (!inputValues.message.trim() && !submitted) {
       errors.message = "Message is required";
     } else {
       errors.message = "";
@@ -81,8 +85,6 @@ export const ContactUsView: FC = ({ }) => {
     if (
       validation.name == "" &&
       validation.email == "" &&
-      validation.phone == "" &&
-      validation.subject == "" &&
       validation.message == ""
     ) {
       setLoading(true);
@@ -95,6 +97,7 @@ export const ContactUsView: FC = ({ }) => {
           inputValues.message
         )
         .then((res) => {
+          setSubmitted(true)
           setResponse(res);
           setLoading(false);
         });
@@ -112,6 +115,8 @@ export const ContactUsView: FC = ({ }) => {
       subject: "",
       message: "",
     });
+    setSubmitted(true)
+
   }
 
   return (

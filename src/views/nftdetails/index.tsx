@@ -1,4 +1,3 @@
-
 import BidListOnNFT from "components/BidListOnNFT";
 import BidonNFT from "components/BidonNFT";
 import { AnyMap } from "immer/dist/internal";
@@ -262,6 +261,9 @@ export const NFTDetailsView: FC = ({ }) => {
                                     <b>Initial Bid:</b> <img src="/solana_color.png" alt="" /> {data?.auctionDetail?.initialBid} SOL |  <b>Incremented Value:</b> <img src="/solana_color.png" alt="" /> {data?.auctionDetail?.minimumBid} SOL
                                 </p>
                             }
+                            <p className="small mb-4">
+                                <b>Certificate of authentication:</b>  <a style={{ color: 'blue' }} href="#" target={'_blank'}>Click here</a>
+                            </p>
 
                             <h5>Description</h5>
                             <p>{data?.shortDescription}</p>
