@@ -30,3 +30,5 @@ public/reactPlayerKaltura.bundle.js
 public/vendor.bundle.js
 public/vendor.bundle.js.map
 public/app.bundle.js
+.next
+.next/*
