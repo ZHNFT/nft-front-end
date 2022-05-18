@@ -34,6 +34,14 @@ interface NftDetail {
     winnerDetail: WinnerDetail;
     currentBid: any
 }
+const ids = [
+    {
+        'cc54fd11-4055-4169-ba97-0aa188c8f721': 'https://www.artcertificate.eu/?qrcode=20220514122741',
+        '2f73ec52-4f4c-4e72-8c01-29b1a4987db3': 'https://www.artcertificate.eu/?qrcode=20220513102538',
+        'a10bc151-5ae8-4666-834c-db0038a164ae': "https://www.artcertificate.eu/?qrcode=20220511014005"
+    },
+
+]
 
 export interface AuctionDetail {
     auctionIdentifier: string;
@@ -60,6 +68,7 @@ export const NFTDetailsView: FC = ({ }) => {
     const baseUrl = process.env.BASE_URL;
     const router = useRouter();
     const queryurl = router.asPath.split('=')[1];
+    const [link, setLink] = useState('')
     const [data, setData] = useState<NftDetail>();
     const [wish, setWish] = useState(false);
     const [display, setDisplay] = useState(false);
@@ -140,7 +149,10 @@ export const NFTDetailsView: FC = ({ }) => {
         if (data) {
             // console.log(data.isFavourite)
             setWish(data.isFavourite);
+
+            setLink(ids[0][data.nftIdentifier])
         }
+
 
 
 
@@ -262,7 +274,7 @@ export const NFTDetailsView: FC = ({ }) => {
                                 </p>
                             }
                             <p className="small mb-4">
-                                <b>Certificate of authentication:</b>  <a style={{ color: 'blue' }} href="#" target={'_blank'}>Click here</a>
+                                <b>Certificate of authentication:</b>  <a style={{ color: 'blue' }} href={data?.nftIdentifier && ids[0][data.nftIdentifier]} target={'_blank'}>Click here</a>
                             </p>
 
                             <h5>Description</h5>
